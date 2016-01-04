@@ -20,13 +20,13 @@ except IOError:
     print('The data file is missing!')
 
 try:
-    manFile = open("manScript.txt", 'w+')
-    otherFile = open('otherManScript.txt', 'w+')
-
+    manFile = open("manScript.txt", 'w')
+    otherFile = open('otherManScript.txt', 'w')
     print(man, file=manFile)
     print(other, file=otherFile)
-
-    manFile.close()
-    otherFile.close()
 except IOError:
     print("I couldn't write to the file")
+finally:
+    manFile.close()
+    otherFile.close()
+    
